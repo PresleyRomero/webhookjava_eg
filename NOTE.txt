@@ -1,0 +1,96 @@
+-- DDL PARA DB EJEMPLO. FORMULRAIO "EMPRESA" CON 2 REPETIBLES ("SUCURSALES", "TRABAJADORES")
+
+-- ----------------------------
+-- Table structure for empresa
+-- ----------------------------
+DROP TABLE IF EXISTS `empresa`;
+CREATE TABLE `empresa` (
+  `fulcrum_id` varchar(255) DEFAULT NULL,
+  `created_at` varchar(255) DEFAULT NULL,
+  `updated_at` varchar(255) DEFAULT NULL,
+  `created_by` varchar(255) DEFAULT NULL,
+  `updated_by` varchar(255) DEFAULT NULL,
+  `system_created_at` varchar(255) DEFAULT NULL,
+  `system_updated_at` varchar(255) DEFAULT NULL,
+  `version` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `project` varchar(255) DEFAULT NULL,
+  `assigned_to` varchar(255) DEFAULT NULL,
+  `latitude` varchar(255) DEFAULT NULL,
+  `longitude` varchar(255) DEFAULT NULL,
+  `geometry` geometry DEFAULT NULL,
+  `codigo` varchar(255) DEFAULT NULL,
+  `nombre` varchar(255) DEFAULT NULL,
+  `descripcion` varchar(5000) DEFAULT NULL,
+  `numero_empleados` varchar(255) DEFAULT NULL,
+  `fecha_creacion` varchar(255) DEFAULT NULL,
+  `gps_altitude` varchar(255) DEFAULT NULL,
+  `gps_horizontal_accuracy` varchar(255) DEFAULT NULL,
+  `gps_vertical_accuracy` varchar(255) DEFAULT NULL,
+  `gps_speed` varchar(255) DEFAULT NULL,
+  `gps_course` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for trabajador
+-- ----------------------------
+DROP TABLE IF EXISTS `trabajador`;
+CREATE TABLE `trabajador` (
+  `fulcrum_id` varchar(255) DEFAULT NULL,
+  `fulcrum_parent_id` varchar(255) DEFAULT NULL,
+  `fulcrum_record_id` varchar(255) DEFAULT NULL,
+  `version` varchar(255) DEFAULT NULL,
+  `latitude` varchar(255) DEFAULT NULL,
+  `longitude` varchar(255) DEFAULT NULL,
+  `geometry` varchar(255) DEFAULT NULL,
+  `created_at` varchar(255) DEFAULT NULL,
+  `updated_at` varchar(255) DEFAULT NULL,
+  `created_by` varchar(255) DEFAULT NULL,
+  `updated_by` varchar(255) DEFAULT NULL,
+  `codigo_trabajador` varchar(255) DEFAULT NULL,
+  `nombres` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- ----------------------------
+-- Table structure for sucursal
+-- ----------------------------
+DROP TABLE IF EXISTS `sucursal`;
+CREATE TABLE `sucursal` (
+  `fulcrum_id` varchar(255) DEFAULT NULL,
+  `fulcrum_parent_id` varchar(255) DEFAULT NULL,
+  `fulcrum_record_id` varchar(255) DEFAULT NULL,
+  `version` varchar(255) DEFAULT NULL,
+  `latitude` varchar(255) DEFAULT NULL,
+  `longitude` varchar(255) DEFAULT NULL,
+  `geometry` varchar(255) DEFAULT NULL,
+  `created_at` varchar(255) DEFAULT NULL,
+  `updated_at` varchar(255) DEFAULT NULL,
+  `created_by` varchar(255) DEFAULT NULL,
+  `updated_by` varchar(255) DEFAULT NULL,
+  `codigo_suc` varchar(255) DEFAULT NULL,
+  `lugar` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- ----------------------------
+-- Table structure for datawebhook
+-- ----------------------------
+DROP TABLE IF EXISTS `datawebhook`;
+CREATE TABLE `datawebhook` (
+  `code` varchar(30) DEFAULT NULL,
+  `name` varchar(30) DEFAULT NULL,
+  `description` varchar(5000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- ----------------------------
+-- Table structure for catch
+-- ----------------------------
+DROP TABLE IF EXISTS `catch`;
+CREATE TABLE `catch` (
+  `code` varchar(30) DEFAULT NULL,
+  `name` varchar(64) DEFAULT NULL,
+  `description` varchar(5000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
